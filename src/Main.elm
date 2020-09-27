@@ -6,7 +6,7 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (..)
-import Html.Attributes exposing (style)
+import Html.Attributes exposing (class, href, style)
 import Task
 import Time
 
@@ -73,12 +73,20 @@ subscriptions model =
     Time.every 1000 Tick
 
 
-toHex : String -> String
-toHex time =
-    if (String.toInt (time) |> Maybe.withDefault 0) < 10 then
+addLeftZero : String -> String
+addLeftZero time =
+    if (String.toInt time |> Maybe.withDefault 0) < 10 then
         "0" ++ time
+
     else
         time
+
+
+toHex : String -> String -> String -> String
+toHex hour minute second =
+    "#" ++ addLeftZero hour ++ addLeftZero minute ++ addLeftZero second
+
+
 
 -- VIEW
 
@@ -102,16 +110,21 @@ display model =
             String.fromInt (Time.toSecond model.zone model.time)
 
         hexcolor =
-                "#" ++ (toHex hour) ++ (toHex minute) ++ (toHex second)
+            toHex hour minute second
     in
     [ div
-        [ style "background-color" hexcolor
-        , style "display" "flex"
-        , style "align-items" "center"
-        , style "justify-content" "center"
-        , style "max-height" "fit-content"
+        [ class "page"
+        , style "background-color" hexcolor
         ]
-        [ h1 [] [ text ( ( toHex hour ) ++ ":" ++ ( toHex minute ) ++ ":" ++ ( toHex second )) ]
-        , h2 [] [ text hexcolor ]
+        [ h1[][ text hexcolor ]
+        , footer [ class "description" ]
+            [ text "Made by "
+            , a [ href "https://github.com/it6c65" ] [ text "Luis Ilarraza" ]
+            , br [] []
+            , text "This is the ", a[ href "https://elm-lang.org" ][ text "Elm version" ], text " of the "
+            , a [ href "https://github.com/JamelHammoud/hextime" ] [ text "HexTime" ]
+            , br [] []
+            , a [ href "https://github.com/it6c65/hextime-elm" ] [ text "CODE HERE" ]
+            ]
         ]
     ]

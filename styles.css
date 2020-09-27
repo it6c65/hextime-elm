@@ -1,0 +1,43 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'DogicaBold';
+}
+.description {
+  position: fixed;
+  background-color: #00000031;
+  color: white;
+  padding: 8px 8px;
+  bottom: 2rem;
+  text-align: center;
+  font-family: 'DogicaRegular';
+  font-size: 0.7rem;
+}
+a {
+  color: white;
+  /* -webkit-text-stroke: 1px gray; */
+  font-family: 'DogicaBold';
+  text-decoration-line: none;
+}
+a:before {
+  content: "「";
+}
+a:after {
+  content: "」";
+}
+h1 {
+  font-size: 9vw;
+  text-shadow: rgba(0,0,0, 0.3) 6px 3px 0px;
+  -webkit-text-stroke: 1px black;
+}
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  height: 100%;
+  width: 100%;
+  line-height: 2;
+}
