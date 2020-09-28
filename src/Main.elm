@@ -1,11 +1,11 @@
-module Main exposing (..)
+module Main exposing (main)
 
 --
 -- Show the current time in Hexadecimals
 --
 
 import Browser
-import Html exposing (..)
+import Html exposing (Html, a, br, div, footer, h1, text)
 import Html.Attributes exposing (class, href, style)
 import Task
 import Time
@@ -116,12 +116,14 @@ display model =
         [ class "page"
         , style "background-color" hexcolor
         ]
-        [ h1[][ text hexcolor ]
+        [ h1 [] [ text hexcolor ]
         , footer [ class "description" ]
             [ text "Made by "
             , a [ href "https://github.com/it6c65" ] [ text "Luis Ilarraza" ]
             , br [] []
-            , text "This is the ", a[ href "https://elm-lang.org" ][ text "Elm version" ], text " of the "
+            , text "This is the "
+            , a [ href "https://elm-lang.org" ] [ text "Elm version" ]
+            , text " of the "
             , a [ href "https://github.com/JamelHammoud/hextime" ] [ text "HexTime" ]
             , br [] []
             , a [ href "https://github.com/it6c65/hextime-elm" ] [ text "CODE HERE" ]
