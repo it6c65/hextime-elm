@@ -4,6 +4,7 @@ body, html {
   padding: 0;
   font-family: 'DogicaBold';
 }
+
 .description {
   position: fixed;
   background-color: #00000031;
@@ -14,23 +15,28 @@ body, html {
   font-family: 'DogicaRegular';
   font-size: 0.7rem;
 }
+
 a {
   color: white;
   /* -webkit-text-stroke: 1px gray; */
   font-family: 'DogicaBold';
   text-decoration-line: none;
 }
+
 a:before {
   content: "「";
 }
+
 a:after {
   content: "」";
 }
+
 h1 {
   font-size: 9vw;
   text-shadow: rgba(0,0,0, 0.3) 6px 3px 0px;
   -webkit-text-stroke: 1px black;
 }
+
 .page {
   display: flex;
   align-items: center;
@@ -40,4 +46,9 @@ h1 {
   height: 100%;
   width: 100%;
   line-height: 2;
+  background-repeat: repeat;
+  transition-property: background-image;
+  transition-delay: 1s;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
 }
