@@ -7,4 +7,4 @@ It's notable that Elm is more verbose (132 LoC) vs the JS version (6 LoC), but t
 
 This a good didactic between both languages, besides, the logic that how works the time in Elm is something large and it's better explained in this [guide](https://guide.elm-lang.org/effects/time.html)
 
-You can find the live [here](https://it6c65.github.io/hextime-elm)
+You can find the live [here](https://it6c65.github.io/hextime-elm/)
